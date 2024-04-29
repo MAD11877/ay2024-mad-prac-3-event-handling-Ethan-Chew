@@ -29,26 +29,26 @@ public class ListActivity extends AppCompatActivity {
         });
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Profile");
-        builder.setMessage("MADness");
-        builder.setCancelable(true);
-        builder.setPositiveButton("View", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                Random rand = new Random();
-                int randomNum = rand.nextInt(999999);
-                // Send Random Number to MainActivity as an Intent
-                Intent sendRandomNum = new Intent(ListActivity.this, MainActivity.class);
-                sendRandomNum.putExtra("num", String.valueOf(randomNum));
-                startActivity(sendRandomNum);
-            }
-        });
-        builder.setNegativeButton("Close", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
+        builder.setTitle("Profile")
+                .setMessage("MADness")
+                .setCancelable(true)
+                .setPositiveButton("View", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Random rand = new Random();
+                        int randomNum = rand.nextInt(999999);
+                        // Send Random Number to MainActivity as an Intent
+                        Intent sendRandomNum = new Intent(ListActivity.this, MainActivity.class);
+                        sendRandomNum.putExtra("num", String.valueOf(randomNum));
+                        startActivity(sendRandomNum);
+                    }
+                })
+                .setNegativeButton("Close", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
 
-            }
-        });
+                    }
+                });
 
         AlertDialog alert = builder.create();
 

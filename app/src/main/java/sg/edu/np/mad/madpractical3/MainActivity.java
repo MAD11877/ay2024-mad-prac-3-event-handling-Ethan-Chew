@@ -33,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
         TextView tvName = findViewById(R.id.tvName);
         TextView tvDescription = findViewById(R.id.tvDescription);
         Button btnFollow = findViewById(R.id.btnFollow);
+        Button btnMessage = findViewById(R.id.btnMessage);
 
         // Get Data from Intent
         Intent receivingIntent = getIntent();
@@ -57,6 +58,15 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "Unfollow", Toast.LENGTH_LONG).show();
                     user.followed = true;
                 }
+            }
+        });
+
+        // OnClickListener for Message Button
+        btnMessage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent displayMessageGroup = new Intent(MainActivity.this, MessageGroup.class);
+                startActivity(displayMessageGroup);
             }
         });
     }
